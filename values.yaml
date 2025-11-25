@@ -42,7 +42,7 @@ getTask:
 
 ui:
   replicas: 4
-  port: 8000
+  port: 80
   #connectionString: Driver={ODBC Driver 18 for SQL Server};Server=tcp:todosqlserver1.database.windows.net,1433;Database=todo-db;Uid=azureuser;Pwd=Abhilash@7878;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
   image:
     name: todo-ui
