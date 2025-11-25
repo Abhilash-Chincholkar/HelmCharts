@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: "{{ .Release.Name }}-todo-get-tasks-api-ingress"
 spec:
-  ingressClassName: {{ .Values.getTask.ingress.ingressClass }}
+  ingressClassName: "{{ .Values.getTask.ingress.ingressClass }}"
   rules:
-  - host: {{ .Values.getTask.ingress.host}}
+  - host: "{{ .Values.getTask.ingress.host}}"
     http:
       paths:
       - pathType: Prefix
