@@ -1,0 +1,54 @@
+common:
+  containerRegistryURL: bisleryregistry.azurecr.io
+
+addTask:
+  replicas: 4
+  port: 8000
+  connectionString: Driver={ODBC Driver 18 for SQL Server};Server=tcp:todosqlserver1.database.windows.net,1433;Database=todo-db;Uid=azureuser;Pwd=Abhilash@7878;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+  image:
+    name: todo-add-tasks-api 
+    tag: v1
+  ingress:
+    ingressClass: azure-application-gateway
+    host: add-task-api.chincholkar.shop
+  servicePort: 80
+  targetPort: 8000
+
+deleteTask:
+  replicas: 4
+  port: 8000
+  connectionString: Driver={ODBC Driver 18 for SQL Server};Server=tcp:todosqlserver1.database.windows.net,1433;Database=todo-db;Uid=azureuser;Pwd=Abhilash@7878;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+  image:
+    name: todo-delete-tasks-api 
+    tag: v1
+  ingress:
+    ingressClass: azure-application-gateway
+    host: delete-task-api.chincholkar.shop
+  servicePort: 80
+  targetPort: 8000
+
+getTask:
+  replicas: 4
+  port: 8000
+  connectionString: Driver={ODBC Driver 18 for SQL Server};Server=tcp:todosqlserver1.database.windows.net,1433;Database=todo-db;Uid=azureuser;Pwd=Abhilash@7878;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+  image:
+    name: todo-get-tasks-api 
+    tag: v1
+  ingress:
+    ingressClass: azure-application-gateway
+    host: get-task-api.chincholkar.shop
+  servicePort: 80
+  targetPort: 8000
+
+ui:
+  replicas: 4
+  port: 8000
+  #connectionString: Driver={ODBC Driver 18 for SQL Server};Server=tcp:todosqlserver1.database.windows.net,1433;Database=todo-db;Uid=azureuser;Pwd=Abhilash@7878;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+  image:
+    name: todo-ui
+    tag: v1
+  ingress:
+    ingressClass: azure-application-gateway
+    host: ui.chincholkar.shop
+  servicePort: 80
+  targetPort: 8000
