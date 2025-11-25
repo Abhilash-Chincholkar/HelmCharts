@@ -7,5 +7,5 @@ spec:
   selector:
     app: todo-get-task-api
   ports:
-    - port: 80
-      targetPort: 8000
+    - port: {{ .Values.getTask.servicePort }}
+      targetPort: {{ .Values.getTask.targetPort }}
