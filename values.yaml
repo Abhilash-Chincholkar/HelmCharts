@@ -51,4 +51,4 @@ ui:
     ingressClass: azure-application-gateway
     host: ui.chincholkar.shop
   servicePort: 80
-  targetPort: 8000
+  targetPort: 80
