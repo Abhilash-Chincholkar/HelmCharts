@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: "{{ .Release.Name }}-todo-add-tasks-api-ingress"
 spec:
-  ingressClassName: "{{ .Values.addTask.ingress.ingressClass }}"
+  ingressClassName: {{ .Values.addTask.ingress.ingressClass }}
   rules:
-    - host: "{{ .Values.addTask.ingress.host }}"
+    - host: {{ .Values.addTask.ingress.host }}
       http:
         paths:
           - pathType: Prefix
@@ -14,4 +14,4 @@ spec:
               service:
                 name: "{{ .Release.Name }}-todo-add-tasks-api"
                 port:
-                  number: "{{ .Values.addTask.servicePort }}"
+                  number: {{ .Values.addTask.servicePort }}
